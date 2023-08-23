@@ -1,8 +1,9 @@
 import React from "react";
+import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Cart from "./components/Cart";
 import ProductList from "./components/ProductList";
-import ProductDetail from "./components/ProductDetail";
+import ProductDetail from "./components/ProductList/Product";
 
 function App() {
   return (
@@ -23,7 +24,11 @@ function App() {
 }
 
 function Home() {
-  return <h2>Home</h2>;
+  return (
+    <>
+      <h2>Home</h2>
+    </>
+  );
 }
 
 export default App;

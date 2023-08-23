@@ -1,16 +1,19 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import Product from './Product';
 
 function ProductList() {
+  const [products] = useState([
+    { id: 1, name: 'Produto 1', description: 'Descrição 1', price: '$10', imageUrl: 'url1' },
+    { id: 2, name: 'Produto 2', description: 'Descrição 2', price: '$20', imageUrl: 'url2' },
+    // ... outros produtos
+  ]);
+
   return (
     <div>
-      <h2>Lista de Produtos</h2>
-      {/* Suponhamos que tenhamos 3 produtos para simplificar */}
-      <ul>
-        <li><Link to="/product/1">Produto 1</Link></li>
-        <li><Link to="/product/2">Produto 2</Link></li>
-        <li><Link to="/product/3">Produto 3</Link></li>
-      </ul>
+      <h1>Lista de Produtos</h1>
+      {products.map(product => (
+        <Product key={product.id} product={product} />
+      ))}
     </div>
   );
 }
