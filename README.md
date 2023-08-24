@@ -1,2 +1,3 @@
 # loja
 # lojas
+# lojas
